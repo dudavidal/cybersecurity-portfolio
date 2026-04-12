@@ -30,6 +30,7 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 
 * Root Me → [ver write-up](./TryHackMe/Root-me/Write-up.pdf)
 * Pickle Rick→ [ver write-up](./TryHackMe/Pickle-Rick/Write-up.pdf)
+* Simple Ctf → [ver write-up](./Simple-Ctf/Write%20up.pdf)  
 
 ### 🔐 Crack de Senhas
 
