@@ -31,6 +31,10 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 * Root Me → [ver write-up](./TryHackMe/Root-me/Write-up.pdf)
 * Pickle Rick→ [ver write-up](./TryHackMe/Pickle-Rick/Write-up.pdf)
 
+### 🔐 Crack de Senhas
+
+* Hashcat (nível iniciante) → [Ver atividade](./Criptografia_e_Cracking/CTF_hashes.pdf)
+
 ## 🎓 Certificados
 
 - Introdução à Cibersegurança → https://www.credly.com/badges/398ce151-10cd-4f00-8ba5-8ba8b8939540/public_url
