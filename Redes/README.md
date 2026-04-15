@@ -12,7 +12,7 @@ O objetivo é construir uma base sólida para aplicação em cibersegurança.
 ### 🛰️ Traceroute Lab
 Análise prática do funcionamento do comando traceroute, identificando hops, latência e comportamento da rede.
 
-👉 [Ver projeto](./Traceroute)
+👉 [Ver projeto](./Traceroute/Funcionamento-Tracerouter.pdf)
 
 ---
 
