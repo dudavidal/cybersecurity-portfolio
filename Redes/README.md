@@ -18,7 +18,6 @@ Análise prática do funcionamento do comando traceroute, identificando hops, la
 Lista de exercícios teóricos abordando conceitos fundamentais de redes de computadores, como atraso, comutação, meios físicos e arquitetura da Internet.
 
 👉 [Ver projeto](./fundamentos/Lista-exercicios-Teoria.pdf)
----
 
 ## 🎯 Objetivo
 Desenvolver entendimento prático de redes 
