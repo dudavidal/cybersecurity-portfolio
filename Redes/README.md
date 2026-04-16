@@ -14,6 +14,10 @@ Análise prática do funcionamento do comando traceroute, identificando hops, la
 
 👉 [Ver projeto](./Traceroute/Funcionamento-Tracerouter.pdf)
 
+### 🛰️ Fudnamentos
+Lista de exercícios teóricos abordando conceitos fundamentais de redes de computadores, como atraso, comutação, meios físicos e arquitetura da Internet.
+
+👉 [Ver projeto](./fundamentos/Lista-exercicios-Teoria.pdf)
 ---
 
 ## 🎯 Objetivo
