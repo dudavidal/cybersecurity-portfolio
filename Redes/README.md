@@ -14,10 +14,15 @@ Análise prática do funcionamento do comando traceroute, identificando hops, la
 
 👉 [Ver projeto](./Traceroute/Funcionamento-Tracerouter.pdf)
 
-### 🛰️ Fudnamentos
+### 🛰️ Fudamentos
 Lista de exercícios teóricos abordando conceitos fundamentais de redes de computadores, como atraso, comutação, meios físicos e arquitetura da Internet.
 
 👉 [Ver projeto](./fundamentos/Lista-exercicios-Teoria.pdf)
+
+### 💬 Sistema de Chat TCP
+Chat em tempo real usando sockets TCP e threads, com mensagens privadas, por setor e broadcast, com relatorio explicativo.
+
+👉 [Ver projeto](./SistemaChat/)
 
 ## 🎯 Objetivo
 Desenvolver entendimento prático de redes 
