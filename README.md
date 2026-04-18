@@ -36,16 +36,15 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 
 * Hashcat (nível iniciante) → [Ver atividade](./Criptografia_e_Cracking/CTF_hashes.pdf)
 
-## 🎓 Certificados
-
-- Introdução à Cibersegurança → https://www.credly.com/badges/398ce151-10cd-4f00-8ba5-8ba8b8939540/public_url
-
-
 ### 🌐 Redes
 
 * Fudamentos de rede→ [ver projeto](./Redes/fundamentos/Lista-exercicios-Teoria.pdf)
 * Traceroute Lab → [ver projeto](./Redes/Traceroute/Funcionamento-Tracerouter.pdf)
 * Sistema de chat → [ver projeto](./Redes/SistemaChat/)  
+
+## 🎓 Certificados
+
+- Introdução à Cibersegurança → https://www.credly.com/badges/398ce151-10cd-4f00-8ba5-8ba8b8939540/public_url
 
 
 ## 🎯 Objetivo
