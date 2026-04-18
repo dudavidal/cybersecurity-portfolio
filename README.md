@@ -42,6 +42,11 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 
 
 ### 🌐 Redes
-(em andamento)
+
+* Fudamentos de rede→ [ver projeto](./Redes/fundamentos/Lista-exercicios-Teoria.pdf)
+* Traceroute Lab → [ver projeto](./Redes/Traceroute/Funcionamento-Tracerouter.pdf)
+* Sistema de chat → [ver projeto](./Redes/SistemaChat/)  
 
 
+## 🎯 Objetivo
+Desenvolver entendimento prático de redes 

@@ -29,7 +29,7 @@ O foco está em documentar o processo completo de resolução, incluindo racioc�
 
 - Root Me → [ver write-up](./Root-me/Write-up.pdf)  
 - Pickle Rick → [ver write-up](./Pickle-Rick/Write-up.pdf)  
-- Simple Ctf → [ver write-up](./Simple-Ctf/Write%20up.pdf)  
+- Simple Ctf → [ver write-up](./Simple-Ctf/Write-up.pdf)  
 
 ---
 
