@@ -35,6 +35,7 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 ### 🔐 Crack de Senhas
 
 * Hashcat (nível iniciante) → [Ver atividade](./Criptografia_e_Cracking/CTF_hashes.pdf)
+* Crack the Hash → [ver write-up](./Criptografia_e_Cracking/WriteUpCracktheHash.pdf)
 
 ### 🌐 Redes
 
