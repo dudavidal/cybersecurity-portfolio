@@ -47,3 +47,4 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 ## 🎓 Certificados
 
 - Introdução à Cibersegurança → https://www.credly.com/badges/398ce151-10cd-4f00-8ba5-8ba8b8939540/public_url
+- Noções básicas de redes → https://www.credly.com/badges/46ce491c-d367-4545-9575-5d218c68b895/public_url 
