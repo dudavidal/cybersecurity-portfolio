@@ -38,7 +38,7 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 
 ### 🔐 HackTheBox
 
-* Kobold→ [ver write-up](./Kobold/Write-up.pdf)
+* Kobold→ [ver write-up](./HackTheBox/Kobold/Write-up.pdf)
 
 ### 🔐 Crack de Senhas
 
