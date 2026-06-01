@@ -1,7 +1,7 @@
 # 🔐 TryHackMe Write-ups
 
 ## 📌 Sobre
-Esta pasta contém meus write-ups de máquinas e laboratórios resolvidos na plataforma TryHackMe.
+Esta pasta contém meus write-ups de máquinas e laboratórios resolvidos na plataforma Hack The box.
 
 O foco está em documentar o processo completo de resolução, incluindo raciocínio, ferramentas utilizadas e técnicas aplicadas.
 
@@ -20,21 +20,15 @@ O foco está em documentar o processo completo de resolução, incluindo racioc�
 - Nmap  
 - Gobuster  
 - Netcat  
-
+- hydra 
+- webanalyzer
 ---
 
 ## 📁 Write-ups
 
 ### 🟢 Iniciante
 
-- Root Me → [ver write-up](./Root-me/Write-up.pdf)  
-- Pickle Rick → [ver write-up](./Pickle-Rick/Write-up.pdf)  
-- Simple Ctf → [ver write-up](./Simple-Ctf/Write-up.pdf)  
-- Chocolate Factory  → [ver write-up](./Chocolate-Factory/Write-up.pdf)
-- Lazy admin → [ver write-up](./Lazy-admin/Write-up.pdf)
-- Thom ghost → [ver write-up](./Thom-ghost/Write-up.pdf)
-- Look up → [ver write-up](./Look-up/Write-up.pdf)
-- kobold→ [ver write-up](./Look-up/Write-up.pdf)
+- kobold→ [ver write-up](./Kobold/Write-up.pdf)
 
 ---
 

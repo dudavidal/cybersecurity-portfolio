@@ -32,6 +32,13 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 * Pickle Rick→ [ver write-up](./TryHackMe/Pickle-Rick/Write-up.pdf)
 * Simple Ctf → [ver write-up](./Simple-Ctf/Write%20up.pdf)  
 * Chocolate Factory  → [ver write-up](./TryHackMe/Chocolate-Factory/Write-up.pdf)
+* Lazy admin → [ver write-up](./TryHackMe/Lazy-admin/Write-up.pdf)
+* Thom ghost → [ver write-up](./TryHackMe/Thom-ghost/Write-up.pdf)
+* Look up → [ver write-up](./TryHackMe/Look-up/Write-up.pdf)
+
+### 🔐 HackTheBox
+
+* Kobold→ [ver write-up](./Kobold/Write-up.pdf)
 
 ### 🔐 Crack de Senhas
 
