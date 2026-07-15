@@ -1,0 +1,60 @@
+{
+  "estado_arquivos": {
+    "teste_p2p.txt": {
+      "hash": "da59233709001942b7fb1eede41c518cad4df1bc84d223bc103a500f2f865a0d",
+      "mtime": 1782511978.5844724,
+      "size": 53,
+      "version": 3,
+      "deleted": true
+    },
+    ".p2p_state.json": {
+      "hash": "85b8395e8a5f4f324075e5f2795ae993d572f71d9e0bd58eaf27840754e55e80",
+      "mtime": 1782512183.0484936,
+      "size": 865,
+      "version": 72,
+      "deleted": true
+    },
+    "_teste_p2p.txt": {
+      "hash": "f950c961c6a8762650662351751123acaa2894be24f01d0c02744d5acad89995",
+      "mtime": 1782512052.6711662,
+      "size": 32,
+      "version": 3,
+      "deleted": true
+    },
+    "_upload_api.txt": {
+      "hash": "2d891c5ce0d2c4daa5af6200f0cf9177d3bdbbfd21dec6040658a626af491834",
+      "mtime": 1782512068.664778,
+      "size": 36,
+      "version": 2,
+      "deleted": true
+    },
+    "flor.png.jpg": {
+      "hash": "943c0f786be3343958afdc5ba274c49cb80dac733e762e4dff702272a59cf4ac",
+      "mtime": 1782512410.2794788,
+      "size": 18714,
+      "version": 1,
+      "deleted": false
+    },
+    "hello_p2p.txt": {
+      "hash": "ca33cd9996d405a811651178588b076d36ff162af368996c7f687ceb662501fa",
+      "mtime": 1782512595.5376961,
+      "size": 24,
+      "version": 2,
+      "deleted": true
+    },
+    "flor2.png": {
+      "hash": "fb5c5b036e15d1aa6cb9f91b365b72bd0fc5bea8ab69ea888c188318996f822f",
+      "mtime": 1782518954.6421769,
+      "size": 50516,
+      "version": 1,
+      "deleted": false
+    },
+    "flores.png.jpg": {
+      "hash": "be0264084789530deaf59e8794cbd122be793c76830a043c8ec523a64248816d",
+      "mtime": 1782519372.2172763,
+      "size": 144624,
+      "version": 2,
+      "deleted": true
+    }
+  }
+}

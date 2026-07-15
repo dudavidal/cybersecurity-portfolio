@@ -1,0 +1,18 @@
+{
+  "estado_arquivos": {
+    "flor.png.jpg": {
+      "hash": "943c0f786be3343958afdc5ba274c49cb80dac733e762e4dff702272a59cf4ac",
+      "mtime": 1782521534.4699726,
+      "size": 18714,
+      "version": 1,
+      "deleted": false
+    },
+    "flor2.png": {
+      "hash": "fb5c5b036e15d1aa6cb9f91b365b72bd0fc5bea8ab69ea888c188318996f822f",
+      "mtime": 1782521534.464805,
+      "size": 50516,
+      "version": 1,
+      "deleted": false
+    }
+  }
+}

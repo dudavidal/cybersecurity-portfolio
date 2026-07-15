@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lotus Garden</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Great+Vibes&family=Inter:wght@300;400;500;600&display=swap');
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #f5f0eb;
+    --bg-surface: #efe8e0;
+    --bg-card: #fffbf7;
+    --bg-hover: #faf3ed;
+    --border: #e5dbd1;
+    --border-light: #efe5db;
+    --text: #3d3229;
+    --text-secondary: #8a7a6b;
+    --text-muted: #b8a89a;
+    --dusty-rose: #c98a7a;
+    --dusty-rose-soft: rgba(201, 138, 122, 0.1);
+    --dusty-rose-glow: rgba(201, 138, 122, 0.2);
+    --olive: #8a9a7a;
+    --olive-soft: rgba(138, 154, 122, 0.1);
+    --gold: #c4a87a;
+    --green: #7a8a6a;
+    --green-soft: rgba(122, 138, 106, 0.1);
+    --shadow: 0 2px 16px rgba(61, 50, 41, 0.06);
+    --shadow-lg: 0 4px 32px rgba(61, 50, 41, 0.08);
+    --radius: 12px;
+    --radius-sm: 6px;
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-script: 'Great Vibes', 'Tangerine', cursive;
+    --font-sans: 'Inter', 'Segoe UI', -apple-system, sans-serif;
+    --sidebar-width: 240px;
+    --topbar-height: 64px;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text);
+    font-size: 13px;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--dusty-rose); color: #fff; }
+
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--dusty-rose); border-radius: 4px; }
+
+  .layout { display: flex; min-height: 100vh; }
+
+  /* ---- Sidebar ---- */
+  .sidebar {
+    width: var(--sidebar-width);
+    background: var(--bg-surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    position: fixed;
+    top: 0; left: 0;
+    height: 100vh;
+    z-index: 10;
+  }
+
+  .sidebar-top {
+    padding: 28px 20px 24px;
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    text-align: center;
+  }
+
+  .sidebar-top::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; left: 40px; right: 40px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dusty-rose), transparent);
+  }
+
+  .logo-icon {
+    font-size: 2rem;
+    margin-bottom: 6px;
+    display: block;
+    opacity: 0.8;
+  }
+
+  .logo-text {
+    font-family: var(--font-script);
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+    letter-spacing: 0.02em;
+  }
+
+  .logo-text .sub {
+    font-family: var(--font-sans);
+    font-size: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 4px;
+    text-transform: uppercase;
+  }
+
+  .garden-badge {
+    display: inline-block;
+    font-family: var(--font-serif);
+    font-size: 0.55rem;
+    font-style: italic;
+    color: var(--dusty-rose);
+    border: 1px solid var(--border);
+    padding: 2px 12px;
+    margin-top: 8px;
+    background: var(--bg-card);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-section {
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--text-muted);
+    padding: 20px 20px 8px;
+    font-weight: 600;
+  }
+
+  .nav-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 20px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 0.78rem;
+    font-weight: 400;
+    transition: all .2s;
+    border: none;
+    background: none;
+    width: 100%;
+    text-align: left;
+    font-family: inherit;
+    position: relative;
+    border-left: 2px solid transparent;
+  }
+
+  .nav-item:hover { background: var(--bg-hover); color: var(--text); }
+  .nav-item.active {
+    background: var(--dusty-rose-soft);
+    color: var(--dusty-rose);
+    font-weight: 500;
+    border-left-color: var(--dusty-rose);
+  }
+
+  .nav-item .ico { font-size: 0.85rem; width: 18px; text-align: center; flex-shrink: 0; opacity: 0.7; }
+
+  .sidebar-footer {
+    margin-top: auto;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+  }
+
+  .sidebar-footer .label { font-size: 0.5rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.15em; font-weight: 600; }
+  .sidebar-footer .value { font-family: var(--font-sans); font-size: 0.6rem; color: var(--text-secondary); word-break: break-all; margin-top: 2px; }
+  .sidebar-footer .row { margin-bottom: 6px; }
+  .sidebar-footer .row:last-child { margin-bottom: 0; }
+
+  /* ---- Main ---- */
+  .main-area { margin-left: var(--sidebar-width); flex: 1; display: flex; flex-direction: column; }
+
+  /* ---- Top Bar ---- */
+  .topbar {
+    height: var(--topbar-height);
+    background: rgba(255, 251, 247, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    gap: 12px;
+  }
+
+  .topbar-left { display: flex; align-items: center; gap: 16px; }
+  .topbar-title {
+    font-family: var(--font-serif);
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.04em;
+  }
+
+  .topbar-right { display: flex; align-items: center; gap: 8px; }
+
+  .status-pill {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.62rem;
+    color: var(--text-secondary);
+    padding: 5px 14px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    font-weight: 400;
+    letter-spacing: 0.03em;
+  }
+
+  .status-dot {
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--olive);
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 6px 16px;
+    font-size: 0.65rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all .2s;
+    font-family: inherit;
+    white-space: nowrap;
+    letter-spacing: 0.04em;
+  }
+
+  .btn:disabled { opacity: .35; cursor: default; }
+
+  .btn-primary {
+    background: var(--dusty-rose);
+    color: #fff;
+    border: none;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    background: #b87a6a;
+  }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--text-secondary);
+    border-color: var(--border-light);
+  }
+
+  .btn-ghost:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--dusty-rose); color: var(--dusty-rose); }
+
+  .btn-danger {
+    background: transparent;
+    color: var(--dusty-rose);
+    border-color: var(--border-light);
+  }
+
+  .btn-danger:hover:not(:disabled) { background: var(--dusty-rose-soft); border-color: var(--dusty-rose); }
+
+  .btn-sm { padding: 4px 12px; font-size: 0.6rem; }
+
+  /* ---- Content ---- */
+  .content { padding: 24px 28px; flex: 1; }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* ---- Stats ---- */
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .stat {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    padding: 14px 16px;
+    position: relative;
+    box-shadow: var(--shadow);
+  }
+
+  .stat-label {
+    font-size: 0.5rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    font-weight: 600;
+  }
+
+  .stat-value {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-top: 2px;
+  }
+
+  .stat-value.dusty-rose { color: var(--dusty-rose); }
+  .stat-value.olive { color: var(--olive); }
+  .stat-value.gold { color: var(--gold); }
+
+  /* ---- Card ---- */
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    overflow: hidden;
+    margin-bottom: 16px;
+    box-shadow: var(--shadow);
+  }
+
+  .card-header {
+    padding: 12px 18px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    background: rgba(245, 240, 235, 0.3);
+  }
+
+  .card-title {
+    font-family: var(--font-serif);
+    font-size: 0.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .12em;
+    color: var(--text-secondary);
+  }
+
+  .card-body { padding: 0; }
+
+  /* ---- File Table ---- */
+  .file-table { width: 100%; border-collapse: collapse; }
+
+  .file-table th {
+    text-align: left;
+    padding: 8px 16px;
+    font-size: 0.52rem;
+    text-transform: uppercase;
+    letter-spacing: .15em;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    font-weight: 600;
+  }
+
+  .file-table td {
+    padding: 8px 16px;
+    border-bottom: 1px solid rgba(229, 219, 209, 0.4);
+    vertical-align: middle;
+    font-size: 0.75rem;
+  }
+
+  .file-table tr:last-child td { border-bottom: none; }
+  .file-table tr:hover td { background: var(--bg-hover); }
+
+  .file-table tr {
+    border-left: 2px solid transparent;
+    transition: border-color .2s;
+  }
+
+  .file-table tr:hover { border-left-color: var(--dusty-rose); }
+
+  .file-name-cell { display: flex; align-items: center; gap: 8px; }
+  .file-icon { font-size: 0.95rem; flex-shrink: 0; opacity: 0.7; }
+  .file-name { font-weight: 500; color: var(--text); }
+  .file-mono { font-family: var(--font-sans); font-size: 0.62rem; color: var(--text-secondary); }
+
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 10px;
+    font-size: 0.58rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 1px solid transparent;
+  }
+
+  .badge-dusty-rose { background: var(--dusty-rose-soft); color: var(--dusty-rose); border-color: rgba(201, 138, 122, 0.15); }
+  .badge-olive { background: var(--olive-soft); color: var(--olive); border-color: rgba(138, 154, 122, 0.15); }
+  .badge-gold { background: rgba(196, 168, 122, 0.08); color: var(--gold); border-color: rgba(196, 168, 122, 0.15); }
+  .badge-gray { background: rgba(184, 168, 154, 0.1); color: var(--text-muted); border-color: rgba(184, 168, 154, 0.15); }
+
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--text-muted);
+  }
+
+  .empty-state .ico { font-size: 2rem; display: block; margin-bottom: 10px; opacity: .5; }
+  .empty-state p { font-size: 0.75rem; font-family: var(--font-serif); font-style: italic; }
+
+  /* ---- Upload ---- */
+  .upload-zone {
+    border: 1px dashed var(--border);
+    padding: 32px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all .2s;
+    background: rgba(255, 251, 247, 0.5);
+    position: relative;
+  }
+
+  .upload-zone:hover, .upload-zone.drag { border-color: var(--dusty-rose); background: var(--dusty-rose-soft); }
+  .upload-zone .ico { font-size: 2.2rem; display: block; margin-bottom: 10px; opacity: 0.6; }
+  .upload-zone p { color: var(--text-muted); font-size: 0.72rem; margin-top: 4px; font-family: var(--font-serif); font-style: italic; }
+  .upload-zone strong { font-family: var(--font-serif); font-weight: 600; color: var(--dusty-rose); font-size: 0.9rem; font-style: italic; }
+  #file-input { display: none; }
+
+  .progress-bar {
+    height: 2px;
+    background: var(--border);
+    overflow: hidden;
+    margin-top: 12px;
+    display: none;
+  }
+
+  .progress-bar.show { display: block; }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--dusty-rose), var(--gold));
+    width: 0%;
+    transition: width .3s;
+  }
+
+  /* ---- Peers ---- */
+  .peer-list { padding: 6px 16px; }
+
+  .peer-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(229, 219, 209, 0.3);
+    border-left: 2px solid transparent;
+    padding-left: 6px;
+    transition: border-color .2s;
+  }
+
+  .peer-row:hover { border-left-color: var(--dusty-rose); }
+  .peer-row:last-child { border-bottom: none; }
+
+  .peer-avatar {
+    width: 28px; height: 28px;
+    background: var(--dusty-rose-soft);
+    border: 1px solid var(--border-light);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.7rem;
+    flex-shrink: 0;
+    color: var(--dusty-rose);
+  }
+
+  .peer-name { font-weight: 500; font-size: 0.75rem; font-family: var(--font-serif); color: var(--text); }
+  .peer-addr { font-family: var(--font-sans); font-size: 0.6rem; color: var(--text-secondary); margin-top: 1px; }
+  .peer-status { margin-left: auto; display: flex; align-items: center; gap: 6px; }
+
+  /* ---- Log ---- */
+  .log-box {
+    background: rgba(245, 240, 235, 0.4);
+    padding: 12px 16px;
+    height: 160px;
+    overflow-y: auto;
+    font-family: var(--font-sans);
+    font-size: 0.6rem;
+    line-height: 1.8;
+    border-top: 1px solid var(--border);
+  }
+
+  .log-line { display: flex; gap: 8px; }
+  .log-time { color: var(--text-muted); flex-shrink: 0; }
+  .log-msg.info { color: var(--olive); }
+  .log-msg.ok { color: var(--green); }
+  .log-msg.warn { color: var(--gold); }
+  .log-msg.error { color: var(--dusty-rose); }
+  .log-msg.sync { color: #a89ab8; }
+
+  /* ---- Toast ---- */
+  #toast {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--dusty-rose);
+    padding: 14px 20px;
+    font-size: 0.72rem;
+    font-family: var(--font-serif);
+    font-weight: 500;
+    font-style: italic;
+    box-shadow: var(--shadow-lg);
+    transform: translateY(80px);
+    opacity: 0;
+    transition: transform .35s ease, opacity .35s ease;
+    z-index: 999;
+    max-width: 320px;
+  }
+
+  #toast.show { transform: translateY(0); opacity: 1; }
+
+  .recent-list { padding: 6px 16px; }
+  .recent-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 7px 0;
+    border-bottom: 1px solid rgba(229, 219, 209, 0.3);
+  }
+
+  .recent-item:last-child { border-bottom: none; }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border), transparent);
+    margin: 2px 0;
+  }
+
+  .ornamental-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--dusty-rose), transparent);
+    margin: 8px 20px;
+    position: relative;
+  }
+
+  .ornamental-line::after {
+    content: '\2726';
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.4rem;
+    color: var(--dusty-rose);
+    background: var(--bg-surface);
+    padding: 0 8px;
+  }
+
+  input[type="checkbox"] {
+    accent-color: var(--dusty-rose);
+    width: 14px; height: 14px;
+  }
+
+  a { color: var(--dusty-rose); text-decoration: none; font-weight: 500; }
+  a:hover { color: #b87a6a; text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-top">
+      <span class="logo-icon">🪷</span>
+      <div class="logo-text">
+        Lotus Garden
+        <span class="sub">jardim digital · sincronização p2p</span>
+      </div>
+      <div class="garden-badge">✦ alimente seu jardim</div>
+    </div>
+
+    <div class="nav-section">Navegação</div>
+
+    <button class="nav-item active" onclick="switchTab('drive')" id="nav-drive">
+      <span class="ico">🪷</span> Meu Jardim
+    </button>
+    <button class="nav-item" onclick="switchTab('peers')" id="nav-peers">
+      <span class="ico">🌿</span> Jardineiros
+    </button>
+    <button class="nav-item" onclick="switchTab('upload')" id="nav-upload">
+      <span class="ico">🌱</span> Plantar
+    </button>
+    <button class="nav-item" onclick="switchTab('log')" id="nav-log">
+      <span class="ico">📜</span> Diário
+    </button>
+
+    <div class="ornamental-line"></div>
+    <div class="nav-section">Ações</div>
+    <button class="nav-item" onclick="forcSync()">
+      <span class="ico">🔄</span> Sincronizar
+    </button>
+    <button class="nav-item" onclick="forcCheck()">
+      <span class="ico">🔍</span> Verificar
+    </button>
+
+    <div class="sidebar-footer">
+      <div class="row">
+        <div class="label">Jardineiro</div>
+        <div class="value" id="sb-peer-id">—</div>
+      </div>
+      <div class="row">
+        <div class="label">Canteiro</div>
+        <div class="value" id="sb-pasta">—</div>
+      </div>
+      <div class="row">
+        <div class="label">Portas</div>
+        <div class="value" id="sb-ports">—</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main-area">
+
+    <div class="topbar">
+      <div class="topbar-left">
+        <span class="topbar-title" id="page-title">🪷 Meu Jardim</span>
+        <span class="status-pill">
+          🌱 <span id="stat-files">0</span> arquivos
+        </span>
+      </div>
+      <div class="topbar-right">
+        <span class="status-pill" id="uptime-display">
+          <span class="status-dot"></span> <span id="uptime">—</span>
+        </span>
+        <button class="btn btn-primary btn-sm" onclick="forcSync()">⟳ Sync</button>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- TAB: Meu Jardim -->
+      <div class="tab-content active" id="tab-drive">
+        <div class="stats-row">
+          <div class="stat">
+            <div class="stat-label">Jardineiros</div>
+            <div class="stat-value olive" id="stat-peers">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Plantas</div>
+            <div class="stat-value dusty-rose" id="stat-active-files">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Podadas</div>
+            <div class="stat-value" id="stat-deleted" style="color:var(--text-muted)">0</div>
+          </div>
+          <div class="stat">
+            <div class="stat-label">Porta TCP</div>
+            <div class="stat-value gold" id="stat-port">—</div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🪷 Arquivos do jardim</div>
+            <span class="file-mono" id="files-count"></span>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="file-table">
+              <thead><tr>
+                <th>Nome</th><th>Versão</th><th>Tamanho</th><th>Modificado</th><th>Status</th><th></th>
+              </tr></thead>
+              <tbody id="drive-files-body"></tbody>
+            </table>
+            <div class="empty-state" id="drive-files-empty">
+              <span class="ico">🌱</span>
+              <p>Seu jardim está vazio. Comece plantando novos arquivos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🌿 Jardineiros na rede</div>
+          </div>
+          <div class="peer-list" id="drive-peers-body">
+            <div class="empty-state" style="padding:18px">
+              <span class="ico">🌿</span>
+              <p>Nenhum jardineiro conectado no momento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Jardineiros -->
+      <div class="tab-content" id="tab-peers">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🌿 Jardineiros</div>
+            <button class="btn btn-ghost btn-sm" onclick="forcSync()">⟳ Sync</button>
+          </div>
+          <div class="peer-list" id="peers-body">
+            <div class="empty-state">
+              <span class="ico">🌿</span>
+              <p>Nenhum jardineiro encontrado via broadcast.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Plantar -->
+      <div class="tab-content" id="tab-upload">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🌱 Plantar arquivos</div>
+          </div>
+          <div class="card-body" style="padding:20px">
+            <div class="upload-zone" id="upload-zone" onclick="document.getElementById('file-input').click()">
+              <span class="ico">🪷</span>
+              <strong>alimente seu jardim</strong>
+              <p>arraste arquivos para esta área ou clique para selecionar</p>
+            </div>
+            <input type="file" id="file-input" multiple>
+            <div class="progress-bar" id="upload-progress"><div class="progress-fill" id="upload-fill"></div></div>
+            <div id="upload-status" style="margin-top:12px;font-size:.72rem;color:var(--text-muted);font-family:var(--font-serif);font-style:italic;"></div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">🌱 Recentes</div>
+          </div>
+          <div class="recent-list" id="recent-uploads">
+            <div class="empty-state" style="padding:18px">
+              <span class="ico">🌱</span>
+              <p>Nenhuma planta nova nesta sessão.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB: Log -->
+      <div class="tab-content" id="tab-log">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">📜 Diário do jardim</div>
+            <button class="btn btn-ghost btn-sm" onclick="clearLog()">🗑️ Limpar</button>
+          </div>
+          <div class="log-box" id="log-box"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+let ultimoStatus = null;
+let uploadsRecentes = [];
+let _prevFiles = {};
+let _prevPeers = {};
+
+function escJS(s) { return s.replace(/'/g,"\\'").replace(/"/g,"&quot;"); }
+
+function fmt(bytes) {
+  if (bytes === 0) return '0 B';
+  if (bytes < 1024) return bytes + ' B';
+  if (bytes < 1048576) return (bytes/1024).toFixed(1) + ' KB';
+  return (bytes/1048576).toFixed(1) + ' MB';
+}
+
+function fmtUptime(s) {
+  const h = Math.floor(s/3600), m = Math.floor((s%3600)/60), ss = Math.floor(s%60);
+  return `${h}h ${m}m ${ss}s`;
+}
+
+function nowTime() {
+  return new Date().toLocaleTimeString('pt-BR',{hour:'2-digit',minute:'2-digit',second:'2-digit'});
+}
+
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)); }
+
+function switchTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  const tab = document.getElementById('tab-'+name);
+  if (tab) tab.classList.add('active');
+  const nav = document.getElementById('nav-'+name);
+  if (nav) nav.classList.add('active');
+  const titles = {drive:'🪷 Meu Jardim', peers:'🌿 Jardineiros', upload:'🌱 Plantar', log:'📜 Diário'};
+  document.getElementById('page-title').textContent = titles[name] || '🪷 Lotus Garden';
+}
+
+function addLog(msg, type) {
+  const box = document.getElementById('log-box');
+  const line = document.createElement('div');
+  line.className = 'log-line';
+  line.innerHTML = `<span class="log-time">${nowTime()}</span><span class="log-msg ${type||'info'}">${msg}</span>`;
+  box.appendChild(line);
+  box.scrollTop = box.scrollHeight;
+}
+
+function clearLog() {
+  document.getElementById('log-box').innerHTML = '';
+  addLog('🪷 Diário limpo.', 'info');
+}
+
+let toastTimer;
+function toast(msg, color) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.style.borderColor = color || 'var(--dusty-rose)';
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+async function atualizar() {
+  try {
+    const resp = await fetch('/status');
+    const data = await resp.json();
+    ultimoStatus = data;
+
+    document.getElementById('sb-peer-id').textContent = data.peer_id.substring(0,16)+'…';
+    document.getElementById('sb-pasta').textContent = data.pasta;
+    document.getElementById('sb-ports').textContent = `${data.tcp_port} / ${location.port||8000}`;
+    document.getElementById('uptime').textContent = fmtUptime(data.uptime_segundos);
+
+    const ativos = data.arquivos.filter(a => !a.deletado);
+    const removidos = data.arquivos.filter(a => a.deletado);
+
+    document.getElementById('stat-peers').textContent = data.peers.length;
+    document.getElementById('stat-active-files').textContent = ativos.length;
+    document.getElementById('stat-files').textContent = data.arquivos.length;
+    document.getElementById('stat-deleted').textContent = removidos.length;
+    document.getElementById('stat-port').textContent = data.tcp_port;
+
+    renderGardenFiles(ativos);
+    renderGardenPeers(data.peers);
+    renderPeers(data.peers);
+    detectEvents(data);
+  } catch(e) {
+    addLog('Erro: '+e.message, 'error');
+  }
+}
+
+function detectEvents(data) {
+  const currFiles = {};
+  data.arquivos.forEach(a => currFiles[a.nome] = a);
+  for (const nome in currFiles) {
+    const curr = currFiles[nome];
+    const prev = _prevFiles[nome];
+    if (!prev) { if (!curr.deletado) addLog(`🌱 ${nome} plantado (v${curr.versao})`, 'ok'); }
+    else if (curr.versao > prev.versao) {
+      if (curr.deletado) addLog(`🍂 ${nome} podado (v${curr.versao})`, 'warn');
+      else addLog(`🔄 ${nome} regado → v${curr.versao}`, 'sync');
+    }
+  }
+  const currPeers = {};
+  data.peers.forEach(p => currPeers[p.peer_id] = p);
+  for (const pid in currPeers) { if (!_prevPeers[pid]) addLog(`🌿 Jardineiro entrou: ${pid.substring(0,8)}…`, 'ok'); }
+  for (const pid in _prevPeers) { if (!currPeers[pid]) addLog(`🍂 Jardineiro saiu: ${pid.substring(0,8)}…`, 'warn'); }
+  _prevFiles = currFiles;
+  _prevPeers = currPeers;
+}
+
+function renderGardenFiles(arquivos) {
+  const tbody = document.getElementById('drive-files-body');
+  const empty = document.getElementById('drive-files-empty');
+  const count = document.getElementById('files-count');
+  count.textContent = `${arquivos.length} arquivo(s)`;
+  if (arquivos.length === 0) { tbody.innerHTML=''; empty.style.display='block'; return; }
+  empty.style.display='none';
+  tbody.innerHTML = arquivos.map(a => {
+    const ext = a.nome.split('.').pop().toLowerCase();
+    const icon = ['png','jpg','jpeg','gif','bmp','webp'].includes(ext)?'🖼️':
+                 ['mp4','avi','mov','mkv'].includes(ext)?'🎬':
+                 ['mp3','wav','flac','ogg'].includes(ext)?'🎵':
+                 ['pdf'].includes(ext)?'📕':
+                 ['zip','rar','7z','tar','gz'].includes(ext)?'🗜️':
+                 ['exe','msi'].includes(ext)?'⚙️':
+                 '📄';
+    return `<tr>
+      <td><div class="file-name-cell"><span class="file-icon">${icon}</span><span class="file-name">${a.nome}</span></div></td>
+      <td><span class="badge badge-gold">v${a.versao}</span></td>
+      <td class="file-mono">${fmt(a.tamanho)}</td>
+      <td class="file-mono">${a.modificado_em}</td>
+      <td><span class="badge badge-olive">● sync</span></td>
+      <td style="text-align:right;white-space:nowrap">
+        <button class="btn btn-ghost btn-sm" onclick="downloadArquivo('${escJS(a.nome)}')" title="Baixar">⬇</button>
+        <button class="btn btn-danger btn-sm" onclick="deletarArquivo('${escJS(a.nome)}')" title="Remover">✕</button>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+function renderGardenPeers(peers) {
+  const el = document.getElementById('drive-peers-body');
+  if (peers.length === 0) {
+    el.innerHTML = '<div class="empty-state" style="padding:18px"><span class="ico">🌿</span><p>Nenhum jardineiro conectado no momento.</p></div>';
+    return;
+  }
+  el.innerHTML = peers.map(p => {
+    const fresh = p.segundos_desde_ultimo_contato < 10;
+    return `<div class="peer-row">
+      <div class="peer-avatar">🪷</div>
+      <div>
+        <div class="peer-name">${p.peer_id.substring(0,12)}…</div>
+        <div class="peer-addr">${p.ip}:${p.tcp_port}</div>
+      </div>
+      <div class="peer-status">
+        <span class="badge ${fresh?'badge-olive':'badge-gray'}">${fresh?'● online':'◌ off'}</span>
+        <span class="file-mono" style="font-size:.56rem">${p.segundos_desde_ultimo_contato.toFixed(1)}s</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderPeers(peers) {
+  const el = document.getElementById('peers-body');
+  if (peers.length === 0) {
+    el.innerHTML = '<div class="empty-state"><span class="ico">🌿</span><p>Nenhum jardineiro conectado.</p></div>';
+    return;
+  }
+  el.innerHTML = peers.map(p => {
+    const fresh = p.segundos_desde_ultimo_contato < 10;
+    const link = `http://${p.ip}:${p.http_port}`;
+    return `<div class="peer-row">
+      <div class="peer-avatar">🪷</div>
+      <div style="flex:1">
+        <div class="peer-name">${p.peer_id.substring(0,16)}…</div>
+        <div class="peer-addr">${p.ip}:${p.tcp_port} · <a href="${link}" target="_blank">HTTP ${p.http_port}</a></div>
+      </div>
+      <div class="peer-status">
+        <span class="badge ${fresh?'badge-olive':'badge-gray'}">${fresh?'● online':'◌ off'}</span>
+        <span class="file-mono" style="font-size:.56rem">${p.segundos_desde_ultimo_contato.toFixed(1)}s</span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function deletarArquivo(filename) {
+  if (!confirm(`Podar "${filename}" de todos os jardins?`)) return;
+  try {
+    const r = await fetch('/action/delete', {
+      method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body:'filename='+encodeURIComponent(filename)
+    });
+    const d = await r.json();
+    if (d.ok) { toast('🍂 '+filename+' podado', 'var(--dusty-rose)'); addLog(`🍂 Podado: ${filename}`, 'warn'); }
+    else { toast('Erro: '+d.erro, 'var(--dusty-rose)'); }
+  } catch(e) { toast('Erro de rede', 'var(--dusty-rose)'); }
+}
+
+async function downloadArquivo(filename) {
+  try {
+    const resp = await fetch('/download?filename='+encodeURIComponent(filename));
+    if (!resp.ok) { toast('Erro ao baixar', 'var(--dusty-rose)'); return; }
+    const blob = await resp.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    toast('⬇ '+filename+' baixado', 'var(--green)');
+  } catch(e) { toast('Erro de rede', 'var(--dusty-rose)'); }
+}
+
+async function forcSync() {
+  addLog('🔄 Sincronizando…', 'sync');
+  try {
+    const r = await fetch('/action/sync', {method:'POST'});
+    const d = await r.json();
+    toast(`🔄 ${d.peers_contatados} jardineiro(s)`, 'var(--dusty-rose)');
+    addLog(`✅ Sync: ${d.peers_contatados}`, 'ok');
+  } catch(e) { toast('Erro no sync', 'var(--dusty-rose)'); }
+}
+
+async function forcCheck() {
+  addLog('🔍 Verificando jardim…', 'info');
+  try {
+    await fetch('/action/check', {method:'POST'});
+    toast('🔍 Verificado', 'var(--green)');
+    addLog('✅ Jardim verificado', 'ok');
+  } catch(e) { toast('Erro', 'var(--dusty-rose)'); }
+}
+
+const zone = document.getElementById('upload-zone');
+const fileInput = document.getElementById('file-input');
+zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('drag'); });
+zone.addEventListener('dragleave', () => zone.classList.remove('drag'));
+zone.addEventListener('drop', e => { e.preventDefault(); zone.classList.remove('drag'); uploadFiles(e.dataTransfer.files); });
+fileInput.addEventListener('change', () => uploadFiles(fileInput.files));
+
+async function uploadFiles(files) {
+  if (!files || !files.length) return;
+  const progress = document.getElementById('upload-progress');
+  const fill = document.getElementById('upload-fill');
+  const statusEl = document.getElementById('upload-status');
+  progress.classList.add('show');
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    fill.style.width = Math.round((i/files.length)*100)+'%';
+    statusEl.textContent = `Plantando ${file.name}…`;
+    addLog(`🌱 Plantando: ${file.name} (${fmt(file.size)})`, 'info');
+    const fd = new FormData();
+    fd.append('file', file);
+    try {
+      const r = await fetch('/action/upload', {method:'POST', body:fd});
+      const d = await r.json();
+      if (d.ok) {
+        addLog(`✅ ${file.name} plantado`, 'ok');
+        toast(`✅ ${file.name}`, 'var(--green)');
+        uploadsRecentes.unshift({nome:file.name,tamanho:file.size,hora:nowTime()});
+        if (uploadsRecentes.length > 10) uploadsRecentes.pop();
+        renderUploadsRecentes();
+      } else { addLog(`❌ ${file.name}: ${d.erro}`, 'error'); toast('Erro: '+d.erro, 'var(--dusty-rose)'); }
+    } catch(e) { addLog(`❌ Erro: ${file.name}`, 'error'); }
+  }
+  fill.style.width = '100%';
+  statusEl.textContent = `${files.length} arquivo(s) plantado(s).`;
+  setTimeout(() => { progress.classList.remove('show'); fill.style.width='0%'; statusEl.textContent=''; }, 2000);
+  fileInput.value = '';
+}
+
+function renderUploadsRecentes() {
+  const el = document.getElementById('recent-uploads');
+  if (!uploadsRecentes.length) {
+    el.innerHTML = '<div class="empty-state" style="padding:18px"><span class="ico">🌱</span><p>Nenhuma planta nova.</p></div>';
+    return;
+  }
+  el.innerHTML = uploadsRecentes.map(u =>
+    `<div class="recent-item">
+      <span style="font-size:0.95rem">📄</span>
+      <div style="flex:1"><div class="peer-name">${u.nome}</div><div class="peer-addr">${fmt(u.tamanho)} · ${u.hora}</div></div>
+      <span class="badge badge-olive">✓</span>
+    </div>`
+  ).join('');
+}
+
+
+
+addLog('🪷 Lotus Garden iniciado', 'ok');
+atualizar();
+setInterval(atualizar, 2000);
+</script>
+</body>
+</html>

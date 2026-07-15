@@ -1,0 +1,28 @@
+# Pastas de sincronização locais (não devem entrar na imagem)
+volumes/
+sync_folder/
+sync_*/
+
+# Arquivos Docker (não precisam estar dentro da imagem)
+docker-compose.yml
+Dockerfile
+.dockerignore
+
+# Cache Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# README (opcional manter, mas não é necessário na imagem)
+README.md

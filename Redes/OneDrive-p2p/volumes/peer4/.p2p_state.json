@@ -1,0 +1,32 @@
+{
+  "estado_arquivos": {
+    "flor.png.jpg": {
+      "hash": "943c0f786be3343958afdc5ba274c49cb80dac733e762e4dff702272a59cf4ac",
+      "mtime": 1782512607.3626359,
+      "size": 18714,
+      "version": 1,
+      "deleted": false
+    },
+    "hello_p2p.txt": {
+      "hash": "ca33cd9996d405a811651178588b076d36ff162af368996c7f687ceb662501fa",
+      "mtime": 1782512607.3643112,
+      "size": 24,
+      "version": 2,
+      "deleted": true
+    },
+    "flor2.png": {
+      "hash": "fb5c5b036e15d1aa6cb9f91b365b72bd0fc5bea8ab69ea888c188318996f822f",
+      "mtime": 1782518954.6411486,
+      "size": 50516,
+      "version": 1,
+      "deleted": false
+    },
+    "flores.png.jpg": {
+      "hash": "be0264084789530deaf59e8794cbd122be793c76830a043c8ec523a64248816d",
+      "mtime": 1782519372.216759,
+      "size": 144624,
+      "version": 2,
+      "deleted": true
+    }
+  }
+}

@@ -1,0 +1,110 @@
+networks:
+  p2p_net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+    driver_opts:
+      com.docker.network.bridge.enable_icc: "true"
+
+volumes:
+  sync_peer1:
+  sync_peer2:
+  sync_peer3:
+
+services:
+
+  peer1:
+    build: .
+    container_name: peer1
+    hostname: peer1
+    networks:
+      p2p_net:
+        ipv4_address: 172.20.0.11
+    ports:
+      - "6000:6000"
+      - "8000:8000"
+    volumes:
+      - ./volumes/peer1:/app/sync_folder
+    environment:
+      TCP_PORT: "6000"
+      SYNC_FOLDER: /app/sync_folder
+      BROADCAST_ADDR: "172.20.0.255"
+      NODE_NAME: "Peer_Alpha"
+    restart: unless-stopped
+
+  peer2:
+    build: .
+    container_name: peer2
+    hostname: peer2
+    networks:
+      p2p_net:
+        ipv4_address: 172.20.0.12
+    ports:
+      - "6001:6001"
+      - "8001:8001"
+    volumes:
+      - ./volumes/peer2:/app/sync_folder
+    environment:
+      TCP_PORT: "6001"
+      SYNC_FOLDER: /app/sync_folder
+      BROADCAST_ADDR: "172.20.0.255"
+      NODE_NAME: "Peer_Beta"
+    restart: unless-stopped
+
+  peer3:
+    build: .
+    container_name: peer3
+    hostname: peer3
+    networks:
+      p2p_net:
+        ipv4_address: 172.20.0.13
+    ports:
+      - "6002:6002"
+      - "8002:8002"
+    volumes:
+      - ./volumes/peer3:/app/sync_folder
+    environment:
+      TCP_PORT: "6002"
+      SYNC_FOLDER: /app/sync_folder
+      BROADCAST_ADDR: "172.20.0.255"
+      NODE_NAME: "Peer_Gamma"
+    restart: unless-stopped
+
+  peer4:
+    build: .
+    container_name: peer4
+    hostname: peer4
+    networks:
+      p2p_net:
+        ipv4_address: 172.20.0.14
+    ports:
+      - "6003:6003"
+      - "8003:8003"
+    volumes:
+      - ./volumes/peer4:/app/sync_folder
+    environment:
+      TCP_PORT: "6003"
+      SYNC_FOLDER: /app/sync_folder
+      BROADCAST_ADDR: "172.20.0.255"
+      NODE_NAME: "Peer_Delta"
+    restart: unless-stopped
+
+  peer5:
+    build: .
+    container_name: peer5
+    hostname: peer5
+    networks:
+      p2p_net:
+        ipv4_address: 172.20.0.15
+    ports:
+      - "6004:6004"
+      - "8004:8004"
+    volumes:
+      - ./volumes/peer5:/app/sync_folder
+    environment:
+      TCP_PORT: "6004"
+      SYNC_FOLDER: /app/sync_folder
+      BROADCAST_ADDR: "172.20.0.255"
+      NODE_NAME: "Peer_Epsilon"
+    restart: unless-stopped
