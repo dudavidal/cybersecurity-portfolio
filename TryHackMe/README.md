@@ -35,6 +35,11 @@ O foco está em documentar o processo completo de resolução, incluindo racioc�
 - Thom ghost → [ver write-up](./Thom-ghost/Write-up.pdf)
 - Look up → [ver write-up](./Look-up/Write-up.pdf)
 - kobold→ [ver write-up](./Look-up/Write-up.pdf)
+- Fowsniff CTf → [ver write-up](./Fowsniff-Ctf/Write-Up.pdf)
+- Agent sudo→ [ver write-up](./Agent-sudo/Write-Up.pdf)
+- Blue print → [ver write-up](./Blue-print/Write-Up.pdf)
+- Relevant → [ver write-up](./Relevant/Write-Up.pdf)
+- Light → [ver write-up](./Light/Write-up.pdf)
 
 ---
 

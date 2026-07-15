@@ -24,6 +24,13 @@ Chat em tempo real usando sockets TCP e threads, com mensagens privadas, por set
 
 👉 [Ver projeto](./SistemaChat/)
 
+
+### ☁️ OneDrive P2P
+
+Sistema de sincronização de arquivos em Python baseado em arquitetura Peer-to-Peer (P2P), com descoberta automática de peers, sincronização via TCP e monitoramento da pasta compartilhada.
+
+👉 [Ver projeto](./OneDrive-p2p/)
+
 ## 🎯 Objetivo
 Desenvolver entendimento prático de redes 
 
