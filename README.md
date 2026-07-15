@@ -35,11 +35,11 @@ Este portfólio representa minha evolução na área de cibersegurança, desde o
 * Lazy admin → [ver write-up](./TryHackMe/Lazy-admin/Write-up.pdf)
 * Thom ghost → [ver write-up](./TryHackMe/Thom-ghost/Write-up.pdf)
 * Look up → [ver write-up](./TryHackMe/Look-up/Write-up.pdf)
-- Fowsniff CTf → [ver write-up](./TryHackMe/Fowsniff-Ctf/Write-Up.pdf)
-- Agent sudo → [ver write-up](./TryHackMe/Agent-sudo/Write-Up.pdf)
-- Blue print → [ver write-up](./TryHackMe/Blue-print/Write-Up.pdf)
-- Relevant → [ver write-up](./TryHackMe/Relevant/Write-Up.pdf)
-- Light → [ver write-up](./TryHackMe/Light/Write-up.pdf)
+* Fowsniff CTf → [ver write-up](./TryHackMe/Fowsniff-Ctf/Write-Up.pdf)
+* Agent sudo → [ver write-up](./TryHackMe/Agent-sudo/Write-Up.pdf)
+* Blue print → [ver write-up](./TryHackMe/Blue-print/Write-Up.pdf)
+* Relevant → [ver write-up](./TryHackMe/Relevant/Write-Up.pdf)
+* Light → [ver write-up](./TryHackMe/Light/Write-up.pdf)
 
 ### 🔐 HackTheBox
 
